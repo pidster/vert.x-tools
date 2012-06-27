@@ -15,5 +15,14 @@
  */
 
 gradle.projectsLoaded {
-	println rootProject.name
+	configureTasks rootProject
+	rootProject.subprojects.each { project ->
+		configureTasks project
+	}
+}
+
+def configureTasks(project) {
+	Task task = project.tasks.add('packageBusMod')
+	task.group = 'vert.x'
+	task.description = 'an example vert.x task'
 }
