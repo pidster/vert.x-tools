@@ -22,7 +22,7 @@ gradle.projectsLoaded {
 }
 
 def configureTasks(project) {
-	Task task = project.tasks.add('packageBusMod')
-	task.group = 'vert.x'
-	task.description = 'an example vert.x task'
+	project.tasks.add('packageBusMod')
+//	project.'packageBusMod'.group = 'vert.x'
+//	project.'packageBusMod'.description = 'an example vert.x task'
 }
