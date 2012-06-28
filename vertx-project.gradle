@@ -21,7 +21,13 @@ gradle.projectsLoaded {
 	}
 }
 
+configureTasks rootProject
+rootProject.subprojects.each { project ->
+	configureTasks project
+}
+
 def configureTasks(project) {
+	// project.apply plugin('java')
 	project.tasks.add('packageBusMod')
 //	project.'packageBusMod'.group = 'vert.x'
 //	project.'packageBusMod'.description = 'an example vert.x task'
